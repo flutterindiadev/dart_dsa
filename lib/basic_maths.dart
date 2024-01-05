@@ -129,13 +129,13 @@ void checkPrime(int n) {
 
 //GCD and HCF (Greatest common divisor and highest common factor)
 void getGCD(int n1, int n2) {
-  int Gcd = 1;
+  int gcd = 1;
   for (var i = 1; i <= min(n1, n2); i++) {
     if (n1 % i == 0 && n2 % i == 0) {
-      Gcd = i;
+      gcd = i;
     }
   }
-  print(Gcd);
+  print(gcd);
 }
 
 //Equilateral Algorithm for getting GCD

@@ -1,7 +1,7 @@
 //when a function calls itself untill a specific condition is met
 
 void main() {
-  printSum(3, 0);
+  reverseArray(['a', 'b', 'c', 'd']);
 }
 
 int count = 0;
@@ -60,10 +60,56 @@ void reverseIntBacktrack(int n) {
 //Parameterised recursion
 
 //print sum of digits from 1 to n
+//paramerterised
 void printSum(int n, int sum) {
   if (n < 1) {
     print(sum);
     return;
   }
   printSum(n - 1, sum + n);
+}
+
+//print sum of digits from 1 to n
+//Functional
+int printSumWithFuction(int n) {
+  if (n == 0) {
+    return 0;
+  } else {
+    return n + printSumWithFuction(n - 1);
+  }
+}
+
+//factorial of n number
+//Functional
+int printFactorial(int n) {
+  if (n == 0) return 1;
+  return n * printFactorial(n - 1);
+}
+
+//reverse an array
+int step = 0;
+List newl = [];
+void reverseArray(List l) {
+
+  
+  if (step == l.length) {
+    return;
+  }
+  var a = l[step];
+  var b = l[l.length - (step + 1)];
+
+  if (a == b) {
+    return;
+  }
+
+  l[l.length - (step + 1)] = a;
+
+  l[step] = b;
+
+  newl = l;
+  step++;
+  reverseArray(newl);
+  print(newl);
+
+  
 }
